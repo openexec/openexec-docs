@@ -366,4 +366,22 @@ Generated 16 stories
 }
 ```
 
+```
+
+## 4. Scheduling execution
+
+Once the intent translates to technical tasks, it's time to generate runnable commands that the OpenExec Engine can interpret and act upon. 
+
+
+```bash
+$ openexec-planner schedule INTENT.md
+Converting stories into DAG of isolated execution steps...
+Generating execution bash scripts...
+Creating evaluation logic...
+Scheduling 16 workflows...
+
+✅ Execution scheduled successfully!
+Run '$ openexec start' to boot up the autonomous engine cluster and implement the backend.
+```
+
 At this stage, the **OpenExec Engine** boots up, assigning autonomous agents to implement the codebase piece by piece, while automatically validating against established quality gates.
