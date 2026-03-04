@@ -23,6 +23,8 @@ The resulting plan is the direct source of truth for autonomous implementation a
 $ pip install openexec-planner
 $ openexec-planner init
 $ openexec-planner wizard
+$ openexec-planner generate INTENT.md
+$ openexec-planner schedule .openexec/stories.json -o .openexec/tasks.json
 ```
 
 To learn more, navigate through the sidebar.
