@@ -47,47 +47,48 @@ $ openexec-planner wizard
 === OpenExec Intent Wizard ===
 Type 'exit' or 'quit' to stop. Type 'done' to force finish.
 Tell me about your project:
+```
 
+**Developer:**
 > Create dockerized local development environment for guild-hall project and refactor backend to use Python and include supabase also in it's own container
 
-Thinking...
+**Planner Engine:**
+> 🤖 Understood. This is a REFACTOR of guild-hall: you want to dockerize the local dev environment, migrate the backend from Next.js API routes to Python, and run Supabase locally in its own container. I see you already have a remote Supabase configured. The frontend appears to remain Next.js.
+>
+> ❓ Which Python web framework should the new backend use: FastAPI (async, OpenAPI docs), Django (batteries-included, ORM), or Flask (minimal, flexible)?
 
-🤖 Understood. This is a REFACTOR of guild-hall: you want to dockerize the local dev environment, migrate the backend from Next.js API routes to Python, and run Supabase locally in its own container. I see you already have a remote Supabase configured. The frontend appears to remain Next.js.
-
-? Which Python web framework should the new backend use: FastAPI (async, OpenAPI docs), Django (batteries-included, ORM), or Flask (minimal, flexible)?
-
+**Developer:**
 > FastAPI
 
-Thinking...
+**Planner Engine:**
+> 🤖 Understood. FastAPI is confirmed as the Python framework for the backend refactor. This is a strong choice given its async-first design and automatic OpenAPI documentation, which will pair well with Supabase's async client.
+>
+> ❓ Before we define goals, I need to map the existing API surface. How many Next.js API routes currently exist in the project, and do they primarily handle CRUD operations for Supabase, or do they include more complex business logic (e.g., multi-step transactions, third-party integrations)?
 
-🤖 Understood. FastAPI is confirmed as the Python framework for the backend refactor. This is a strong choice given its async-first design and automatic OpenAPI documentation, which will pair well with Supabase's async client.
-
-? Before we define goals, I need to map the existing API surface. How many Next.js API routes currently exist in the project, and do they primarily handle CRUD operations for Supabase, or do they include more complex business logic (e.g., multi-step transactions, third-party integrations)?
-
+**Developer:**
 > use existing functionality
 
-Thinking...
+**Planner Engine:**
+> 🤖 Understood - this is a pure migration that preserves existing functionality. The FastAPI backend will be a 1:1 port of the current Next.js API routes with no feature additions.
+>
+> ❓ To map the existing contracts, I need to catalog the current API routes. Can you confirm which of these categories exist in your current Next.js API: (1) Authentication/user management, (2) Data CRUD operations, (3) File uploads, (4) Webhooks or external integrations, (5) Other?
 
-🤖 Understood - this is a pure migration that preserves existing functionality. The FastAPI backend will be a 1:1 port of the current Next.js API routes with no feature additions.
-
-? To map the existing contracts, I need to catalog the current API routes. Can you confirm which of these categories exist in your current Next.js API: (1) Authentication/user management, (2) Data CRUD operations, (3) File uploads, (4) Webhooks or external integrations, (5) Other?
-
+**Developer:**
 > authentication+user management + crud
 
-Thinking...
+**Planner Engine:**
+> 🤖 Understood. The migration scope is now pinned: **Authentication + User Management + CRUD operations**. These become the three primary goals (G-001, G-002, G-003).
+>
+> ❓ Which domain entities require CRUD migration? I see this is guild-hall - should I scan the existing `/src/app/api/` routes to identify all entities, or can you list the core ones (e.g., quests, guilds, members, etc.)?
 
-🤖 Understood. The migration scope is now pinned: **Authentication + User Management + CRUD operations**. These become the three primary goals (G-001, G-002, G-003).
-
-? Which domain entities require CRUD migration? I see this is guild-hall - should I scan the existing `/src/app/api/` routes to identify all entities, or can you list the core ones (e.g., quests, guilds, members, etc.)?
-
+**Developer:**
 > scan and get information from there
 
-Thinking...
+**Planner Engine:**
+> 🤖 Scan complete. I found a well-structured Next.js 15 app with 8 API routes, 36 server actions, 143 database migrations across 15+ tables, and existing Docker configuration. The migration scope is clearer now: we need to port server actions to FastAPI while preserving the React frontend's expectations.
 
-🤖 Scan complete. I found a well-structured Next.js 15 app with 8 API routes, 36 server actions, 143 database migrations across 15+ tables, and existing Docker configuration. The migration scope is clearer now: we need to port server actions to FastAPI while preserving the React frontend's expectations.
-
+```bash
 ✅ Intent is complete!
-
 ✔ Project intent saved to INTENT.md
 ```
 
