@@ -34,7 +34,7 @@ Choose default model [sonnet]:
 
 Next steps:
   1. Create an INTENT.md or run 'openexec-planner wizard'
-  2. Run 'openexec-planner generate INTENT.md'
+  2. Run 'openexec-planner generate INTENT.md -o .openexec/stories.json'
 ```
 
 ## 2. The Intent Wizard
@@ -95,7 +95,7 @@ Thinking...
 Finally, the Planner compiles the extracted intent and maps it into a Directed Acyclic Graph (DAG). This breaks the high-level intent into atomic implementation tasks, which are directly handed over to the OpenExec Engine for execution.
 
 ```bash
-$ openexec-planner generate INTENT.md
+$ openexec-planner generate INTENT.md -o .openexec/stories.json
 Executor model: sonnet (CLI: claude)
   Using CLI mode: claude
 Generating stories and goals...
