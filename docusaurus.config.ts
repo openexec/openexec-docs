@@ -1,19 +1,20 @@
-import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
+import {themes as githubThemes} from 'prism-react-renderer';
+import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'OpenExec Docs',
-  tagline: 'Orchestrate the Reality',
+  tagline: 'Deterministic AI Operating System',
   favicon: 'img/favicon.svg',
 
   url: 'https://docs.openexec.io',
   baseUrl: '/',
 
-  organizationName: 'openexec', // Usually your GitHub org/user name.
-  projectName: 'openexec-docs', // Usually your repo name.
+  organizationName: 'openexec',
+  projectName: 'openexec-docs',
 
   onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
 
   i18n: {
     defaultLocale: 'en',
@@ -26,11 +27,10 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
+          routeBasePath: '/',
           editUrl:
             'https://github.com/openexec/openexec-docs/tree/main/',
-          routeBasePath: '/',
         },
-        blog: false,
         theme: {
           customCss: './src/css/custom.css',
         },
@@ -40,11 +40,6 @@ const config: Config = {
 
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
-    colorMode: {
-      defaultMode: 'dark',
-      disableSwitch: true,
-      respectPrefersColorScheme: false,
-    },
     navbar: {
       title: 'OpenExec',
       logo: {
@@ -53,16 +48,14 @@ const config: Config = {
       },
       items: [
         {
-          type: 'docSidebar',
-          sidebarId: 'plannerSidebar',
+          to: '/engine/intro',
           position: 'left',
-          label: 'Planner',
+          label: 'Documentation',
         },
         {
-          type: 'docSidebar',
-          sidebarId: 'engineSidebar',
-          position: 'left',
-          label: 'Engine (Go)',
+          href: 'https://openexec.io',
+          label: 'Main Site',
+          position: 'right',
         },
         {
           href: 'https://github.com/openexec',
@@ -78,22 +71,18 @@ const config: Config = {
           title: 'Documentation',
           items: [
             {
-              label: 'OpenExec Planner',
-              to: '/planner/intro',
+              label: 'Getting Started',
+              to: '/engine/intro',
             },
             {
-              label: 'OpenExec Engine',
+              label: 'Concepts',
               to: '/engine/intro',
             },
           ],
         },
         {
-          title: 'More',
+          title: 'Community',
           items: [
-            {
-              label: 'Main Site',
-              href: 'https://openexec.io',
-            },
             {
               label: 'GitHub',
               href: 'https://github.com/openexec',
@@ -104,8 +93,8 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} OpenExec. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: githubThemes.github,
+      darkTheme: githubThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
 };

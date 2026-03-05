@@ -1,30 +1,25 @@
 ---
-title: OpenExec Planner Documentation
+title: Standalone Planner (Deprecated)
 sidebar_position: 1
 ---
 
-# OpenExec Planner
+# OpenExec Planner (Standalone)
 
-Welcome to the official documentation for **OpenExec Planner**.
+:::caution Deprecated
+The standalone Python version of the **OpenExec Planner** is now deprecated. Its logic for requirement gathering, goal tree generation, and task scheduling has been ported to the unified **OpenExec** binary.
+:::
 
-## What is OpenExec Planner?
+## Legacy Overview
+The standalone planner was designed to establish technical baselines via a Python-based engine. 
 
-OpenExec Planner is an orchestration engine that establishes your project's technical baseline. It shifts the focus to the Product Requirements Document (PRD).
+## Migration to Unified Binary
+New users should install the unified **OpenExec** binary which provides the same planner functionality natively in Go with zero dependencies.
 
-Through a guided interactive session, it:
-- Identifies core entities
-- Maps data structures
-- Models execution dependencies
-
-The resulting plan is the direct source of truth for autonomous implementation agents.
-
-## Quick Start
 ```bash
-$ pip install openexec-planner
-$ openexec-planner init
-$ openexec-planner wizard
-$ openexec-planner generate INTENT.md -o .openexec/stories.json
-$ openexec-planner schedule .openexec/stories.json -o .openexec/tasks.json
+# New way (Go-native)
+curl -sSfL https://openexec.io/install.sh | sh
+openexec wizard
+openexec plan INTENT.md
 ```
 
-To learn more, navigate through the sidebar.
+The documentation below is preserved for legacy users still running the Python engine.
