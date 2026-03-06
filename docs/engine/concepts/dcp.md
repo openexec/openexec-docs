@@ -24,6 +24,15 @@ OpenExec doesn't "guess" your deployment settings. It keeps a hard record of:
 ### 3. Hard Policy Guardrails
 Rules are enforced locally before any code is saved. This means your AI can't accidentally commit a secret key or break a linting rule.
 
+## Surgical Sanitization (PII Scrubbing)
+
+The DCP doesn't just filter tools; it filters **data**. Every piece of information sent to an external model passes through a local sanitization layer:
+- **PII Detection:** Automatically identifies emails and identity codes (like HETU).
+- **Credential Masking:** Redacts API keys and passwords from request arguments.
+- **Infrastructure Masking:** Replaces internal IP addresses with generic placeholders.
+
+This ensures that the AI receives the **logic** it needs without ever seeing the **sensitive data** it shouldn't.
+
 ---
 
 ## Junior Dev Summary

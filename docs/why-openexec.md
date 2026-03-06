@@ -27,9 +27,10 @@ Sovereignty is the power to choose who sees your data. OpenExec v0.1.6 allows yo
 *   **Infrastructure Masking:** The cloud AI doesn't need to know your internal IP addresses or server topologies. These are stored in your **Local Knowledge Map** and used by local tools to perform actions, keeping your network map private.
 *   **Concrete Example:** Our **Local Tool Search** acts as a privacy filter. It scans your internal systems locally and only sends the *description* of the tool the AI needs. This reduces data exposure to external APIs by 47%.
 
-## 4. GDPR Compliance (PII Shielding)
+## 4. GDPR Compliance (PII Shield)
 Handling Personally Identifiable Information (PII) is a major blocker for AI adoption. OpenExec allows you to detect and scrub sensitive data locally before it ever reaches an external cloud model.
 *   **The "Masking" Analogy:** It's like having a local clerk who blacks out sensitive names and phone numbers on a document before sending a photocopy to an external researcher.
+*   **What is scrubbed:** The system automatically detects and redacts **Emails**, Finnish **Personal Identity Codes (HETU)**, **IP Addresses**, and common **API Keys/Credentials** from all AI requests.
 *   **Concrete Example:** You can define a rule that says "Any string matching a Finnish personal identity code (HETU) must be replaced with [MASKED] before being sent to an API." This happens on your machine, ensuring 100% compliance.
 
 ## 5. The Digital Flight Recorder (Transparency)
