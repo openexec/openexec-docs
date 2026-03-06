@@ -11,6 +11,7 @@ Welcome to **OpenExec**, the Deterministic AI Operating System.
 OpenExec is now a **Single-Binary Platform** that handles the entire software development lifecycle—from initial requirements gathering to production deployment.
 
 ### Core Documentation
+- [**Why OpenExec?**](/why-openexec) — Compare OpenExec to other AI tools and learn about Hybrid Brains.
 - [**Getting Started**](/engine/intro) — Install and initialize your first project.
 - [**Deterministic Control Plane**](/engine/concepts/dcp) — Learn about surgical symbols and environment topologies.
 - [**Guided Wizard**](/engine/usage/wizard) — How the AI Architect gathers requirements.

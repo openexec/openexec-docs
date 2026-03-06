@@ -5,7 +5,7 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Introduction',
-      items: ['engine/intro'],
+      items: ['why-openexec', 'engine/intro'],
     },
     {
       type: 'category',

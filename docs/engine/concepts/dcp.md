@@ -1,37 +1,30 @@
-# Deterministic Control Plane (DCP)
+# Surgical Knowledge Map (DCP)
 
-The **Deterministic Control Plane** is the heart of OpenExec. It transforms AI agents from "generative guessers" into "surgical operators" by providing a reliable, relational source of truth for your project.
+The **Deterministic Control Plane (DCP)** is OpenExec's "Library." It gives your AI a precise map of your project so it never has to guess.
 
-## The Problem: Probabilistic Context
-Traditional AI agents rely on **Vector Databases** or simple **Grep** to find context. This is "Probabilistic" — the agent *hopes* to find the right code, but often receives irrelevant noise, leading to:
-- **Hallucinations**: The agent "guesses" function names or parameters.
-- **Token Waste**: Sending thousands of lines of irrelevant code to the LLM.
-- **Line Drift**: Pointers becoming invalid as the file length changes.
+## The Problem: "Chat and Hope"
+Traditional AI tools (like Claude Code or Codex) send a bunch of files to the cloud and *hope* the AI finds the right spot. This leads to:
+- **Hallucinations**: The AI "guesses" function names that don't exist.
+- **High Costs**: Sending thousands of lines of code to the cloud is expensive.
+- **Confusion**: The AI gets lost in too much irrelevant information.
 
-## The Solution: Relational Pointers
-The DCP moves project knowledge into specialized, structured SQLite tables. 
+## The Solution: A Precise Local Map
+The DCP indexes your code locally. When an AI agent needs to make a change, it doesn't search for text—it looks at a precise "Surgical Code Map."
 
-### 1. Surgical Symbol Pointers (OpenCode)
-Instead of searching for text, OpenExec uses a native Go AST parser to index your code.
-- **Exact Offsets**: Stores the precise byte-range and line numbers for every function and struct.
-- **Functional Purpose**: Associates comments and docstrings with specific symbols.
-- **Instant Retrieval**: The agent requests `read_symbol(funcName)` and receives only those specific lines.
+### 1. Surgical Symbol Pointers
+Instead of searching for words, OpenExec indexes your code's structure (functions, classes, etc.).
+- **Exact Map**: Knows the precise line numbers and character offsets.
+- **Snippets Only**: The AI only receives the *exact* function it needs to change, not the whole file. This saves you tokens and ensures accuracy.
 
-### 2. Environment Topologies
-Operational data is never "guessed." The DCP stores hard records for your deployment environments:
-- **IP Addresses**: Fixed mapping of services to servers.
-- **Auth Protocols**: Recorded steps for logging into clouds (GCP, AWS, K8s).
-- **Runtime Constraints**: Version requirements for specific environments.
+### 2. Environment Maps
+OpenExec doesn't "guess" your deployment settings. It keeps a hard record of:
+- **IP Addresses**: Exactly where your services are.
+- **Auth Steps**: How to log into your cloud or database.
 
-### 3. Hard Policy Gates
-Deterministic rules are enforced locally before any code is saved:
-- **Secret Detection**: Blocking hardcoded keys.
-- **Compliance Rules**: Mandatory linting and type-checking via the `safe_commit` tool.
+### 3. Hard Policy Guardrails
+Rules are enforced locally before any code is saved. This means your AI can't accidentally commit a secret key or break a linting rule.
 
 ---
 
-## How it works: The Request Flow
-
-1.  **Intent Selection**: The local **BitNet 1-bit Router** parses your natural language locally.
-2.  **Deterministic Fetch**: The Coordinator pulls the **exact records** from the SQLite Knowledge Base.
-3.  **Surgical Injection**: The cloud LLM (Claude/GPT) receives **only the verified records**, ensuring 100% accuracy in its implementation plan.
+## Junior Dev Summary
+Think of the DCP as a **Surgical GPS** for your code. While other tools are using a paper map and getting lost, OpenExec gives the AI turn-by-turn directions to the exact character it needs to change.
