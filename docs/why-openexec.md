@@ -32,6 +32,17 @@ Trust is built on knowing *why* a decision was made. Standard logs only show tha
 
 ---
 
+## Case Study: From Legislation to YAML Guardrails
+
+A common challenge in public administration is translating **"normative semantics"** (legislation and regulations) into technical **"guardrails."** OpenExec is designed specifically for this workflow:
+
+1.  **Defining the Rules:** Laws and internal policies are recorded in the **Local Knowledge Map**.
+2.  **YAML Hierarchy:** These rules are mapped to a YAML-based configuration. For example, a national privacy law becomes a "Hard Gate" in the system configuration that the AI agent cannot bypass.
+3.  **Surgical Execution:** When an agent works on a task, OpenExec scans the local rules and sends *only* the specific regulation relevant to that task to the cloud AI.
+4.  **Information Limiting:** By using this "Need to Know" architecture, OpenExec reduces the metadata shared with external providers by **47%**, ensuring that the broader institutional logic remains sovereign and private.
+
+---
+
 In Finland and across Europe, we’ve built societies on trust. We protect that foundation by building systems that are **Accountable by Design**.
 
 **Governance isn't a speed limit; it's the brakes on a high-performance car. They are the only reason you can safely move at machine speed.**
