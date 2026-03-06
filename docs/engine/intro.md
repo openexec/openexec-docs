@@ -31,6 +31,20 @@ OpenExec consolidates the entire development lifecycle into a single engine:
 
 As a developer, OpenExec lets you move from high-level intent to production code with 100% precision. Because your "Knowledge Map" is local, you save on cloud costs and protect your privacy while the engine handles the repetitive work of writing and testing.
 
+## Installation
+
+Install the OpenExec binary for your platform using the automated script:
+
+```bash
+# Standard installation
+curl -sSfL https://openexec.io/install.sh | sh
+
+# Non-sudo / Custom path installation
+curl -sSfL https://openexec.io/install.sh | INSTALL_DIR=$HOME/bin sh
+```
+
+The script automatically detects your architecture and falls back to `~/.local/bin` if it cannot write to system directories.
+
 ## First Steps
 
 OpenExec requires a Git repository to manage changes and safety rules. Once installed, set up your project:
