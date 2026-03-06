@@ -44,6 +44,11 @@ Trust is built on knowing *why* a decision was made. Standard logs only show tha
 *   **The "Black Box" Analogy:** Just like an airplane's flight recorder, OpenExec captures everything: What did the user ask? What was the AI's plan? What code did it write? Did the tests pass? 
 *   **Concrete Example:** For public sector accountability or SOC2/ISO compliance, you don't have to spend weeks manually gathering evidence. You simply export the encrypted "Audit Trail," which provides a tamper-proof history of every decision the AI made on your behalf.
 
+## 7. Multi-Platform Resilience
+OpenExec is built to run anywhere—macOS, Linux, and Windows—with built-in logic to handle local environment conflicts.
+*   **Automatic Port Probing:** If the default port (8080) is busy (common on developer machines), OpenExec v0.1.7 automatically scans for the next available port, ensuring the system always starts without manual configuration.
+*   **Security Integration:** The system handles macOS Gatekeeper requirements and Windows permission models, providing clear guidance during installation.
+
 ---
 
 ## Case Study: From Legislation to YAML Guardrails
