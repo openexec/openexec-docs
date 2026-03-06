@@ -27,13 +27,19 @@ Sovereignty is the power to choose who sees your data. OpenExec v0.1.6 allows yo
 *   **Infrastructure Masking:** The cloud AI doesn't need to know your internal IP addresses or server topologies. These are stored in your **Local Knowledge Map** and used by local tools to perform actions, keeping your network map private.
 *   **Concrete Example:** Our **Local Tool Search** acts as a privacy filter. It scans your internal systems locally and only sends the *description* of the tool the AI needs. This reduces data exposure to external APIs by 47%.
 
-## 4. GDPR Compliance (PII Shield)
+## 4. GDPR Compliance (PII Shielding)
 Handling Personally Identifiable Information (PII) is a major blocker for AI adoption. OpenExec allows you to detect and scrub sensitive data locally before it ever reaches an external cloud model.
 *   **The "Masking" Analogy:** It's like having a local clerk who blacks out sensitive names and phone numbers on a document before sending a photocopy to an external researcher.
 *   **What is scrubbed:** The system automatically detects and redacts **Emails**, Finnish **Personal Identity Codes (HETU)**, **IP Addresses**, and common **API Keys/Credentials** from all AI requests.
 *   **Concrete Example:** You can define a rule that says "Any string matching a Finnish personal identity code (HETU) must be replaced with [MASKED] before being sent to an API." This happens on your machine, ensuring 100% compliance.
 
-## 5. The Digital Flight Recorder (Transparency)
+## 5. Safe Daemon Mode (Background Orchestration)
+AI agents shouldn't require a human to watch a terminal all day. OpenExec includes a robust background engine that manages tasks while you focus on higher-level decisions.
+*   **The "Air Traffic Control" Analogy:** OpenExec acts as the tower, coordinating multiple AI "planes" (agents) in the background. It tracks every process ID (PID) automatically to ensure no agents "collide" or run twice.
+*   **PID Tracking:** v0.1.6 introduces **Automated PID Management**. It writes a process file to `.openexec/openexec.pid` and ensures that only one engine is active per project.
+*   **Background Visibility:** Even when running in the background, you have total visibility. All output is streamed to `.openexec/daemon.log`, and the web console provides a real-time dashboard of the engine's health.
+
+## 6. The Digital Flight Recorder (Transparency)
 Trust is built on knowing *why* a decision was made. Standard logs only show that a file changed; OpenExec records the entire chain of thought.
 *   **The "Black Box" Analogy:** Just like an airplane's flight recorder, OpenExec captures everything: What did the user ask? What was the AI's plan? What code did it write? Did the tests pass? 
 *   **Concrete Example:** For public sector accountability or SOC2/ISO compliance, you don't have to spend weeks manually gathering evidence. You simply export the encrypted "Audit Trail," which provides a tamper-proof history of every decision the AI made on your behalf.
@@ -49,7 +55,8 @@ A common challenge in public administration is translating **"normative semantic
 3.  **Surgical Execution:** When an agent works on a task, OpenExec scans the local rules and sends *only* the specific regulation relevant to that task to the cloud AI.
 4.  **GDPR Protection:** A local `pii_scrubber` tool identifies and masks identifiable information in the task context, ensuring that no sensitive data is leaked during the process.
 5.  **Infrastructure Masking:** When the AI requests a deployment, OpenExec resolves the server IP addresses and login keys locally. The cloud AI never sees the actual "address" of your infrastructure.
-6.  **Information Limiting:** By using this "Need to Know" architecture, OpenExec reduces the metadata shared with external providers by **47%**, ensuring that the broader institutional logic remains sovereign and private.
+6.  **Background Orchestration:** The user starts the engine once with `--daemon`. OpenExec writes a PID file and manages the entire implementation DAG in the background, allowing the user to simply run `openexec status` to see progress.
+7.  **Information Limiting:** By using this "Need to Know" architecture, OpenExec reduces the metadata shared with external providers by **47%**, ensuring that the broader institutional logic remains sovereign and private.
 
 ---
 
