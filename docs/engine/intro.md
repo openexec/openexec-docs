@@ -33,12 +33,15 @@ As a developer, OpenExec lets you move from high-level intent to production code
 
 ## First Steps
 
-Once installed, initialize your first project:
+OpenExec requires a Git repository to manage changes and safety rules. Once installed, set up your project:
 
 ```bash
+# Ensure you are in a Git repository
+git init
+
 # Initialize OpenExec configuration
 openexec init
-
+```
 # Start the guided interview to define your project
 openexec wizard
 
