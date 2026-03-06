@@ -21,9 +21,11 @@ When an AI helps your organization, it learns your unique patterns, rules, and w
 *   **Concrete Example:** If you spend six months training a process to handle specific Finnish tax laws, that logic stays in your "Local Knowledge Map." You are never locked into a single software vendor (like Google or Microsoft).
 
 ## 3. The "Need to Know" Filter (Sovereignty)
-Sovereignty is the power to choose who sees your data. OpenExec v0.1.6 allows you to use powerful cloud models for thinking, while keeping the actual data processing local.
+Sovereignty is the power to choose who sees your data. OpenExec v0.1.6 allows you to use powerful cloud models for thinking, while keeping the actual data processing and sensitive details local.
 *   **The "Secure Briefing" Analogy:** Instead of handing an external consultant your entire top-secret archive, you only show them the specific paragraph they need to see to answer one question.
-*   **Concrete Example:** Our **Local Tool Search** acts as a privacy filter. It scans your hundreds of internal systems locally and only sends the *description* of the one tool the AI needs. This reduces data exposure to external APIs by 47% and ensures your internal "blueprints" stay private.
+*   **Credential Isolation:** Your API keys, server passwords, and secret tokens never leave your machine. The AI agent might request to "deploy to production," but it never sees the credentials required to do so. OpenExec injects these locally at the moment of execution.
+*   **Infrastructure Masking:** The cloud AI doesn't need to know your internal IP addresses or server topologies. These are stored in your **Local Knowledge Map** and used by local tools to perform actions, keeping your network map private.
+*   **Concrete Example:** Our **Local Tool Search** acts as a privacy filter. It scans your internal systems locally and only sends the *description* of the tool the AI needs. This reduces data exposure to external APIs by 47%.
 
 ## 4. GDPR Compliance (PII Shielding)
 Handling Personally Identifiable Information (PII) is a major blocker for AI adoption. OpenExec allows you to detect and scrub sensitive data locally before it ever reaches an external cloud model.
@@ -45,7 +47,8 @@ A common challenge in public administration is translating **"normative semantic
 2.  **YAML Hierarchy:** These rules are mapped to a YAML-based configuration. For example, a national privacy law becomes a "Hard Gate" in the system configuration that the AI agent cannot bypass.
 3.  **Surgical Execution:** When an agent works on a task, OpenExec scans the local rules and sends *only* the specific regulation relevant to that task to the cloud AI.
 4.  **GDPR Protection:** A local `pii_scrubber` tool identifies and masks identifiable information in the task context, ensuring that no sensitive data is leaked during the process.
-5.  **Information Limiting:** By using this "Need to Know" architecture, OpenExec reduces the metadata shared with external providers by **47%**, ensuring that the broader institutional logic remains sovereign and private.
+5.  **Infrastructure Masking:** When the AI requests a deployment, OpenExec resolves the server IP addresses and login keys locally. The cloud AI never sees the actual "address" of your infrastructure.
+6.  **Information Limiting:** By using this "Need to Know" architecture, OpenExec reduces the metadata shared with external providers by **47%**, ensuring that the broader institutional logic remains sovereign and private.
 
 ---
 
