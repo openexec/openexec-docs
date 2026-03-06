@@ -25,7 +25,12 @@ Sovereignty is the power to choose who sees your data. OpenExec v0.1.6 allows yo
 *   **The "Secure Briefing" Analogy:** Instead of handing an external consultant your entire top-secret archive, you only show them the specific paragraph they need to see to answer one question.
 *   **Concrete Example:** Our **Local Tool Search** acts as a privacy filter. It scans your hundreds of internal systems locally and only sends the *description* of the one tool the AI needs. This reduces data exposure to external APIs by 47% and ensures your internal "blueprints" stay private.
 
-## 4. The Digital Flight Recorder (Transparency)
+## 4. GDPR Compliance (PII Shielding)
+Handling Personally Identifiable Information (PII) is a major blocker for AI adoption. OpenExec allows you to detect and scrub sensitive data locally before it ever reaches an external cloud model.
+*   **The "Masking" Analogy:** It's like having a local clerk who blacks out sensitive names and phone numbers on a document before sending a photocopy to an external researcher.
+*   **Concrete Example:** You can define a rule that says "Any string matching a Finnish personal identity code (HETU) must be replaced with [MASKED] before being sent to an API." This happens on your machine, ensuring 100% compliance.
+
+## 5. The Digital Flight Recorder (Transparency)
 Trust is built on knowing *why* a decision was made. Standard logs only show that a file changed; OpenExec records the entire chain of thought.
 *   **The "Black Box" Analogy:** Just like an airplane's flight recorder, OpenExec captures everything: What did the user ask? What was the AI's plan? What code did it write? Did the tests pass? 
 *   **Concrete Example:** For public sector accountability or SOC2/ISO compliance, you don't have to spend weeks manually gathering evidence. You simply export the encrypted "Audit Trail," which provides a tamper-proof history of every decision the AI made on your behalf.
@@ -39,7 +44,8 @@ A common challenge in public administration is translating **"normative semantic
 1.  **Defining the Rules:** Laws and internal policies are recorded in the **Local Knowledge Map**.
 2.  **YAML Hierarchy:** These rules are mapped to a YAML-based configuration. For example, a national privacy law becomes a "Hard Gate" in the system configuration that the AI agent cannot bypass.
 3.  **Surgical Execution:** When an agent works on a task, OpenExec scans the local rules and sends *only* the specific regulation relevant to that task to the cloud AI.
-4.  **Information Limiting:** By using this "Need to Know" architecture, OpenExec reduces the metadata shared with external providers by **47%**, ensuring that the broader institutional logic remains sovereign and private.
+4.  **GDPR Protection:** A local `pii_scrubber` tool identifies and masks identifiable information in the task context, ensuring that no sensitive data is leaked during the process.
+5.  **Information Limiting:** By using this "Need to Know" architecture, OpenExec reduces the metadata shared with external providers by **47%**, ensuring that the broader institutional logic remains sovereign and private.
 
 ---
 
