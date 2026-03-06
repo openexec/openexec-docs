@@ -27,12 +27,18 @@ Most AI tools "chat and hope"—they send a few files to the cloud and hope the 
 - **Token Efficiency:** Because the "map" is on your machine, OpenExec only sends the **exact snippet** the AI needs. This saves you money on API tokens and prevents the AI from getting confused by too much irrelevant code.
 - **100% Privacy:** Your project's structure (the "map") stays on your machine. You only send specific code snippets when you choose to use a cloud model.
 
+### 🔍 Local Tool Search (RAG for Tools)
+When connecting to complex enterprise systems, you might have hundreds of available tools. Sending every tool definition to the cloud LLM consumes thousands of tokens and slows down responses.
+
+OpenExec's **Local BitNet Router** performs "RAG for tools" on your machine. It searches for and selects only the tools needed for the current task, reducing token usage by up to 47% while maintaining high precision.
+
 ## ⚔️ OpenExec vs. The Others
 
 | Feature | Cloud-Only Tools (Claude Code/Codex) | OpenExec |
 | :--- | :--- | :--- |
 | **Data Privacy** | Code sent to cloud for indexing | Indexing stays 100% Local |
 | **Model Choice** | Locked to one provider | Hybrid (Cloud + Local LLM) |
+| **Tooling** | Sends all tools to context | **Local Tool Search (RAG)** |
 | **Precision** | Search-based (Probabilistic) | Map-based (Deterministic) |
 | **Cost** | High (sends entire files) | Low (sends only tiny snippets) |
 | **Reliability** | "Chat and Hope" | Verified Execution Loop |
