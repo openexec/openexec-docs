@@ -12,7 +12,7 @@ If you've used AI tools like **Claude Code** or **GitHub Codex**, you're used to
 
 OpenExec doesn't lock you into a single AI model. It allows you to choose a different "brain" for each stage of your project:
 
-- **Planning:** Use a powerful cloud model like **Claude 3.5 Sonnet** to map out your project's logic and architecture.
+- **Planning:** Use a powerful cloud model like **Claude 4.6 Sonnet** to map out your project's logic and architecture.
 - **Implementation:** Switch to a **Local LLM** (running on your machine via Ollama) for fast, private, and free code writing.
 - **Review:** Use another high-quality model to act as a final "quality gate" for every change.
 
