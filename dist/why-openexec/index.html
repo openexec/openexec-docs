@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.9.2">
 <title data-rh="true">Why OpenExec? | OpenExec Docs</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://docs.openexec.io/img/docusaurus-social-card.jpg"><meta data-rh="true" name="twitter:image" content="https://docs.openexec.io/img/docusaurus-social-card.jpg"><meta data-rh="true" property="og:url" content="https://docs.openexec.io/why-openexec"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="Why OpenExec? | OpenExec Docs"><meta data-rh="true" name="description" content="Public administration and regulated industries are built on Stability and Accountability. Modern AI, however, is often unpredictable. This creates a &quot;Clock Speed&quot; gap: AI moves at machine speed, but institutions must move at the speed of trust."><meta data-rh="true" property="og:description" content="Public administration and regulated industries are built on Stability and Accountability. Modern AI, however, is often unpredictable. This creates a &quot;Clock Speed&quot; gap: AI moves at machine speed, but institutions must move at the speed of trust."><link data-rh="true" rel="icon" href="/img/favicon.svg"><link data-rh="true" rel="canonical" href="https://docs.openexec.io/why-openexec"><link data-rh="true" rel="alternate" href="https://docs.openexec.io/why-openexec" hreflang="en"><link data-rh="true" rel="alternate" href="https://docs.openexec.io/why-openexec" hreflang="x-default"><script data-rh="true" type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Why OpenExec?","item":"https://docs.openexec.io/why-openexec"}]}</script><link rel="stylesheet" href="/assets/css/styles.c0aa031c.css">
-<script src="/assets/js/runtime~main.6a48af0c.js" defer="defer"></script>
-<script src="/assets/js/main.ff342c24.js" defer="defer"></script>
+<script src="/assets/js/runtime~main.b67bc289.js" defer="defer"></script>
+<script src="/assets/js/main.22006be8.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
 <svg style="display: none;"><defs>
@@ -27,7 +27,7 @@
 <li class=""><strong>Concrete Example:</strong> If you spend six months training a process to handle specific Finnish tax laws, that logic stays in your &quot;Local Knowledge Map.&quot; You are never locked into a single software vendor (like Google or Microsoft).</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="3-the-need-to-know-filter-sovereignty">3. The &quot;Need to Know&quot; Filter (Sovereignty)<a href="#3-the-need-to-know-filter-sovereignty" class="hash-link" aria-label="Direct link to 3. The &quot;Need to Know&quot; Filter (Sovereignty)" title="Direct link to 3. The &quot;Need to Know&quot; Filter (Sovereignty)" translate="no">​</a></h2>
-<p>Sovereignty is the power to choose who sees your data. OpenExec v0.1.13 allows you to use powerful cloud models for thinking, while keeping the actual data processing and sensitive details local.</p>
+<p>Sovereignty is the power to choose who sees your data. OpenExec v0.1.10 allows you to use powerful cloud models for thinking, while keeping the actual data processing and sensitive details local.</p>
 <ul>
 <li class=""><strong>The &quot;Secure Briefing&quot; Analogy:</strong> Instead of handing an external consultant your entire top-secret archive, you only show them the specific paragraph they need to see to answer one question.</li>
 <li class=""><strong>Credential Isolation:</strong> Your API keys, server passwords, and secret tokens never leave your machine. The AI agent might request to &quot;deploy to production,&quot; but it never sees the credentials required to do so. OpenExec injects these locally at the moment of execution.</li>
@@ -45,7 +45,7 @@
 <p>AI agents shouldn&#x27;t require a human to watch a terminal all day. OpenExec includes a robust background engine that manages tasks while you focus on higher-level decisions.</p>
 <ul>
 <li class=""><strong>The &quot;Air Traffic Control&quot; Analogy:</strong> OpenExec acts as the tower, coordinating multiple AI &quot;planes&quot; (agents) in the background. It tracks every process ID (PID) automatically to ensure no agents &quot;collide&quot; or run twice.</li>
-<li class=""><strong>PID Tracking:</strong> v0.1.13 introduces <strong>Automated PID Management</strong>. It writes a process file to <code>.openexec/openexec.pid</code> and ensures that only one engine is active per project.</li>
+<li class=""><strong>PID Tracking:</strong> v0.1.7 introduces <strong>Automated PID Management</strong>. It writes a process file to <code>.openexec/openexec.pid</code> and ensures that only one engine is active per project.</li>
 <li class=""><strong>Background Visibility:</strong> Even when running in the background, you have total visibility. All output is streamed to <code>.openexec/daemon.log</code>, and the web console provides a real-time dashboard of the engine&#x27;s health.</li>
 </ul>
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="6-the-digital-flight-recorder-transparency">6. The Digital Flight Recorder (Transparency)<a href="#6-the-digital-flight-recorder-transparency" class="hash-link" aria-label="Direct link to 6. The Digital Flight Recorder (Transparency)" title="Direct link to 6. The Digital Flight Recorder (Transparency)" translate="no">​</a></h2>
@@ -57,7 +57,7 @@
 <h2 class="anchor anchorTargetStickyNavbar_Vzrq" id="7-multi-platform-resilience">7. Multi-Platform Resilience<a href="#7-multi-platform-resilience" class="hash-link" aria-label="Direct link to 7. Multi-Platform Resilience" title="Direct link to 7. Multi-Platform Resilience" translate="no">​</a></h2>
 <p>OpenExec is built to run anywhere—macOS, Linux, and Windows—with built-in logic to handle local environment conflicts.</p>
 <ul>
-<li class=""><strong>Automatic Port Probing:</strong> If the default port (8080) is busy (common on developer machines), OpenExec v0.1.13 automatically scans for the next available port, ensuring the system always starts without manual configuration.</li>
+<li class=""><strong>Automatic Port Probing:</strong> If the default port (8080) is busy (common on developer machines), OpenExec v0.1.7 automatically scans for the next available port, ensuring the system always starts without manual configuration.</li>
 <li class=""><strong>Security Integration:</strong> The system handles macOS Gatekeeper requirements and Windows permission models, providing clear guidance during installation.</li>
 </ul>
 <hr>
