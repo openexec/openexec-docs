@@ -21,7 +21,7 @@ When an AI helps your organization, it learns your unique patterns, rules, and w
 *   **Concrete Example:** If you spend six months training a process to handle specific Finnish tax laws, that logic stays in your "Local Knowledge Map." You are never locked into a single software vendor (like Google or Microsoft).
 
 ## 3. The "Need to Know" Filter (Sovereignty)
-Sovereignty is the power to choose who sees your data. OpenExec v0.1.11 allows you to use powerful cloud models for thinking, while keeping the actual data processing and sensitive details local.
+Sovereignty is the power to choose who sees your data. OpenExec v0.1.12 allows you to use powerful cloud models for thinking, while keeping the actual data processing and sensitive details local.
 *   **The "Secure Briefing" Analogy:** Instead of handing an external consultant your entire top-secret archive, you only show them the specific paragraph they need to see to answer one question.
 *   **Credential Isolation:** Your API keys, server passwords, and secret tokens never leave your machine. The AI agent might request to "deploy to production," but it never sees the credentials required to do so. OpenExec injects these locally at the moment of execution.
 *   **Infrastructure Masking:** The cloud AI doesn't need to know your internal IP addresses or server topologies. These are stored in your **Local Knowledge Map** and used by local tools to perform actions, keeping your network map private.
@@ -36,7 +36,7 @@ Handling Personally Identifiable Information (PII) is a major blocker for AI ado
 ## 5. Safe Daemon Mode (Background Orchestration)
 AI agents shouldn't require a human to watch a terminal all day. OpenExec includes a robust background engine that manages tasks while you focus on higher-level decisions.
 *   **The "Air Traffic Control" Analogy:** OpenExec acts as the tower, coordinating multiple AI "planes" (agents) in the background. It tracks every process ID (PID) automatically to ensure no agents "collide" or run twice.
-*   **PID Tracking:** v0.1.11 introduces **Automated PID Management**. It writes a process file to `.openexec/openexec.pid` and ensures that only one engine is active per project.
+*   **PID Tracking:** v0.1.12 introduces **Automated PID Management**. It writes a process file to `.openexec/openexec.pid` and ensures that only one engine is active per project.
 *   **Background Visibility:** Even when running in the background, you have total visibility. All output is streamed to `.openexec/daemon.log`, and the web console provides a real-time dashboard of the engine's health.
 
 ## 6. The Digital Flight Recorder (Transparency)
@@ -46,7 +46,7 @@ Trust is built on knowing *why* a decision was made. Standard logs only show tha
 
 ## 7. Multi-Platform Resilience
 OpenExec is built to run anywhere—macOS, Linux, and Windows—with built-in logic to handle local environment conflicts.
-*   **Automatic Port Probing:** If the default port (8080) is busy (common on developer machines), OpenExec v0.1.11 automatically scans for the next available port, ensuring the system always starts without manual configuration.
+*   **Automatic Port Probing:** If the default port (8080) is busy (common on developer machines), OpenExec v0.1.12 automatically scans for the next available port, ensuring the system always starts without manual configuration.
 *   **Security Integration:** The system handles macOS Gatekeeper requirements and Windows permission models, providing clear guidance during installation.
 
 ---
