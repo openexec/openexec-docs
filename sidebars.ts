@@ -12,6 +12,7 @@ const sidebars: SidebarsConfig = {
       label: 'Core Concepts',
       items: [
         'engine/concepts/dcp',
+        'lifecycle',
       ],
     },
     {
