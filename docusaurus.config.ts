@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'OpenExec Docs',
-  tagline: 'Deterministic AI Operating System v0.2.4',
+  tagline: 'Deterministic AI Operating System v0.2.5',
   favicon: 'img/favicon.svg',
 
   url: 'https://docs.openexec.io',
