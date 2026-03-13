@@ -21,7 +21,7 @@ When an AI helps your organization, it learns your unique patterns, rules, and w
 *   **Concrete Example:** If you spend six months training a process to handle specific Finnish tax laws, that logic stays in your "Local Knowledge Map." You are never locked into a single software vendor (like Google or Microsoft).
 
 ## 3. The "Need to Know" Filter (Sovereignty)
-Sovereignty is the power to choose who sees your data. OpenExec v0.3.8 allows you to use powerful cloud models for thinking, while keeping the actual data processing and sensitive details local.
+Sovereignty is the power to choose who sees your data. OpenExec v0.3.9 allows you to use powerful cloud models for thinking, while keeping the actual data processing and sensitive details local.
 *   **The "Secure Briefing" Analogy:** Instead of handing an external consultant your entire top-secret archive, you only show them the specific paragraph they need to see to answer one question.
 *   **Credential Isolation:** Your API keys, server passwords, and secret tokens never leave your machine. The AI agent might request to "deploy to production," but it never sees the credentials required to do so. OpenExec injects these locally at the moment of execution.
 *   **Infrastructure Masking:** The cloud AI doesn't need to know your internal IP addresses or server topologies. These are stored in your **Local Knowledge Map** and used by local tools to perform actions, keeping your network map private.
@@ -46,7 +46,7 @@ Trust is built on knowing *why* a decision was made. Standard logs only show tha
 
 ## 7. Multi-Platform Resilience
 OpenExec is built to run anywhere—macOS, Linux, and Windows—with built-in logic to handle local environment conflicts.
-*   **Automatic Port Probing:** If the default port (8080) is busy (common on developer machines), OpenExec v0.3.8 automatically scans for the next available port, ensuring the system always starts without manual configuration.
+*   **Automatic Port Probing:** If the default port (8080) is busy (common on developer machines), OpenExec v0.3.9 automatically scans for the next available port, ensuring the system always starts without manual configuration.
 *   **Security Integration:** The system handles macOS Gatekeeper requirements and Windows permission models, providing clear guidance during installation.
 
 ---
