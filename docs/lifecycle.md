@@ -50,6 +50,17 @@ The final phase ensures the loop is closed.
 
 ---
 
+## Fast-Track: Study & Mapping
+For tasks that are purely analytical (e.g., "Study the codebase", "Map orchestration boundaries"), OpenExec automatically activates a **Fast-Track** pipeline.
+
+These tasks are detected by their title (containing "study", "map", or "mapping") and skip the Implementation, Review, and Refinement phases entirely.
+
+**Transition:** `TD (Technical Design) → FL (Finalize)`
+
+This avoids unnecessary overhead and keeps your development flow focused on actual code changes.
+
+---
+
 ## Observation in the CLI
 When you run `openexec run`, you will see these transitions in real-time:
 
