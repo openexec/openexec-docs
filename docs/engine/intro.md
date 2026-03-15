@@ -24,26 +24,12 @@ OpenExec consolidates the entire development lifecycle into a single engine:
 
 1.  **Guided Interview (`wizard`)**: An AI Architect helps you define your project's shape and goals.
 2.  **Surgical Planning (`plan`)**: Turns your goals into a detailed, step-by-step implementation map.
-3.  **Autonomous Execution (`run`)**: Your chosen AI model (Local or Cloud) builds your project, verified by quality tests.
+3.  **Autonomous Execution (`run`)**: Your chosen AI model (Local or Cloud) builds your project, verified by quality tests via the **Blueprint Engine**.
 4.  **Local Knowledge Map**: A precise map of your code that ensures the AI never has to "guess."
 
 ## Why this matters for you
 
 As a developer, OpenExec lets you move from high-level intent to production code with 100% precision. Because your "Knowledge Map" is local, you save on cloud costs and protect your privacy while the engine handles the repetitive work of writing and testing.
-
-## Installation
-
-Install the OpenExec binary for your platform using the automated script:
-
-```bash
-# Standard installation
-curl -sSfL https://openexec.io/install.sh | sh
-
-# Non-sudo / Custom path installation
-curl -sSfL https://openexec.io/install.sh | INSTALL_DIR=$HOME/bin sh
-```
-
-The script automatically detects your architecture and falls back to `~/.local/bin` if it cannot write to system directories.
 
 ## First Steps
 

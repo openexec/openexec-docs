@@ -1,74 +1,58 @@
-# Task Lifecycle & Phases
+---
+title: Task Lifecycle
+sidebar_position: 3
+---
 
-OpenExec doesn't just "write code." It treats AI agents as managed workers in a structured pipeline. Every task you run via `openexec run` automatically progresses through five distinct lifecycle phases.
+# Task Lifecycle: From Intent to Verified Code
+
+OpenExec doesn't just "write code." It treats AI agents as managed workers in a structured pipeline. Every task you run automatically progresses through a series of stages defined by a **Blueprint**.
 
 This methodical approach ensures that every change is researched, executed, and independently verified before being finalized.
 
 ---
 
-## 1. TD: Technical Design
-**Persona:** `clario`  
-**Goal:** Formulation of Implementation Strategy
+## The Modern Model: Blueprint Engine
 
-Before typing a single line of code, the system performs a Technical Design phase.
-- **Research:** Clario scans your local repository to map dependencies and existing patterns.
-- **Constraint Check:** Cross-references the task with your `INTENT.md` and Knowledge Base.
-- **Output:** A detailed markdown design document describing exactly *how* the task will be solved.
+OpenExec uses a **Blueprint Engine** to define flexible execution graphs. The default blueprint for implementation (`openexec run`) uses a sequence of **Deterministic** (code-based) and **Agentic** (AI-based) stages.
 
-## 2. IM: Implementation
-**Persona:** `spark`  
-**Goal:** Execution of Design
+### Standard Execution Stages
 
-Spark takes the design from the TD phase and performs the actual work.
-- **Code Generation:** Writes new files or modifies existing ones.
-- **Local Execution:** Runs build commands or installers as needed.
-- **Internal Rules:** Every action is filtered through the **Deterministic Policy Engine** (e.g., preventing remote pushes).
-
-## 3. RV: Review
-**Persona:** `blade`  
-**Goal:** Independent Quality Assurance
-
-Once implementation is complete, a separate reviewer agent (Blade) is spawned to audit the work.
-- **Code Review:** Checks for bugs, security vulnerabilities, and adherence to the design.
-- **Outcome:** Blade either **Approves** the work or **Rejects** it with specific feedback, routing the task back to the IM phase.
-
-## 4. RF: Refinement
-**Persona:** `hon`  
-**Goal:** Optimization & Cleanup
-
-Refinement happens after a successful review.
-- **Polishing:** Cleans up temporary files, logs, or "TODO" comments.
-- **Documentation:** Updates relevant documentation files to reflect the new changes.
-
-## 5. FL: Finalize
-**Persona:** `clario`  
-**Goal:** Goal Validation & State Sync
-
-The final phase ensures the loop is closed.
-- **Verification:** Runs autonomous verification scripts defined in the task.
-- **Persistence:** Synchronizes the task status in the database and prepares for the next task in the dependency graph.
+| Stage | Type | Description |
+|-------|------|-------------|
+| **gather_context** | Deterministic | Scans the repository, extracts relevant symbols, and assembles a context pack. |
+| **implement** | Agentic | The primary AI model (Executor) generates code changes and applies them as patches. |
+| **lint** | Deterministic | Runs the project's native linting tools (e.g., `go vet`, `eslint`, `ruff`). |
+| **fix_lint** | Agentic | If linting fails, the AI analyzes the errors and attempts to fix them automatically. |
+| **test** | Deterministic | Executes the relevant test suite to ensure no regressions were introduced. |
+| **fix_tests** | Agentic | If tests fail, the AI iterates on the implementation until the tests pass. |
+| **review** | Agentic | A final review stage where the AI summarizes the work and verifies it against the original task criteria. |
 
 ---
 
-## Fast-Track: Study & Mapping
+## Legacy Model: 5-Phase Pipeline (Deprecated)
+
+Earlier versions of OpenExec used a fixed 5-phase pipeline. While still supported for backward compatibility, new projects should use the Blueprint model.
+
+1.  **TD (Technical Design):** Research and strategy formulation.
+2.  **IM (Implementation):** Actual code modification.
+3.  **RV (Review):** Independent quality audit.
+4.  **RF (Refinement):** Post-review adjustments.
+5.  **FL (Finalize):** Goal validation and state sync.
+
+---
+
+## Fast-Track: Analytical Tasks
+
 For tasks that are purely analytical (e.g., "Study the codebase", "Map orchestration boundaries"), OpenExec automatically activates a **Fast-Track** pipeline.
 
-These tasks are detected by their title (containing "study", "map", or "mapping") and skip the Implementation, Review, and Refinement phases entirely.
-
-**Transition:** `TD (Technical Design) → FL (Finalize)`
-
-This avoids unnecessary overhead and keeps your development flow focused on actual code changes.
+These tasks skip the implementation and testing stages entirely, moving directly from context gathering to the final summary.
 
 ---
 
-## Observation in the CLI
-When you run `openexec run`, you will see these transitions in real-time:
+## Observation in the Dashboard
 
-```text
-[Worker 0] Executing T-US-001-001: Implement Login API
-[Worker 0]    Loop: T-US-001-001
-[Worker 0]   → Phase TD (clario)
-[Worker 0]   → Phase IM (spark)
-[Worker 0]   → Phase RV (blade)
-[Worker 0]   ✓ Complete
-```
+When a run is active, you can monitor these transitions in real-time via the **Web Console**:
+
+- **Active Stage:** Highlighted in the execution loop.
+- **Logs:** Real-time tail of agent reasoning and tool output.
+- **Audit Trail:** Every transition and tool call is recorded in the immutable audit vault.

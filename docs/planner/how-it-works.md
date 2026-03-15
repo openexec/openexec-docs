@@ -14,7 +14,7 @@ Below is a real-world example of how a developer migrates a Next.js / Supabase b
 First, we initialize the orchestrator in the target directory. The CLI will ask a few basic questions to set a baseline context and establish which AI models will drive the code generation.
 
 ```bash
-$ openexec-planner init
+$ openexec init
 
 🚀 Initializing OpenExec project in /Users/perttu/study/siivous/orchestrator/projects/guild-hall
 Enter project name [guild-hall]: 
@@ -33,8 +33,8 @@ Choose default model [sonnet]:
 ✅ Project 'guild-hall' initialized with sonnet!
 
 Next steps:
-  1. Create an INTENT.md or run 'openexec-planner wizard'
-  2. Run 'openexec-planner generate INTENT.md -o .openexec/stories.json'
+  1. Create an INTENT.md or run 'openexec wizard'
+  2. Run 'openexec plan INTENT.md'
 ```
 
 ## 2. The Intent Wizard
@@ -42,7 +42,7 @@ Next steps:
 Rather than writing the `INTENT.md` requirements manually, OpenExec provides an interactive diagnostic wizard. It asks contextual questions based on your repository's existing state, gradually building a deeply structured execution plan.
 
 ```text
-$ openexec-planner wizard
+$ openexec wizard
 
 === OpenExec Intent Wizard ===
 Type 'exit' or 'quit' to stop. Type 'done' to force finish.
@@ -95,7 +95,7 @@ Thinking...
 Finally, the Planner compiles the extracted intent and maps it into a Directed Acyclic Graph (DAG). This breaks the high-level intent into atomic implementation tasks, which are directly handed over to the OpenExec Engine for execution.
 
 ```bash
-$ openexec-planner generate INTENT.md -o .openexec/stories.json
+$ openexec plan INTENT.md
 Executor model: sonnet (CLI: claude)
   Using CLI mode: claude
 Generating stories and goals...

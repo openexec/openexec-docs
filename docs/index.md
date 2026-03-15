@@ -13,6 +13,8 @@ OpenExec is now a **Single-Binary Platform** that handles the entire software de
 ### Core Documentation
 - [**Why OpenExec?**](/why-openexec) — Compare OpenExec to other AI tools and learn about Hybrid Brains.
 - [**Getting Started**](/engine/intro) — Install and initialize your first project.
+- [**Blueprint Engine**](/engine/concepts/blueprints) — How deterministic and agentic stages work together.
+- [**State Management**](/engine/concepts/state-management) — SQLite as the canonical source of truth.
 - [**Deterministic Control Plane**](/engine/concepts/dcp) — Learn about surgical symbols and environment topologies.
 - [**Guided Wizard**](/engine/usage/wizard) — How the AI Architect gathers requirements.
 
