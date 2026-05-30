@@ -36,7 +36,7 @@ OpenExec doesn't just read files; it understands your project. It maintains a **
 Treat AI as a managed worker, not a replacement for engineering judgment. With **Safety Gates**, you define the boundaries (e.g., "never modify database schemas without a review"). If an agent tries to break a rule, the system blocks the action locally and requests verification.
 
 ### 📜 Digital Flight Recorder
-Trust is built on knowing *why* a decision was made. While standard logs only show *what* changed, OpenExec records the entire reasoning chain in a **tamper-proof audit vault**. This provides push-button compliance for SOC2, ISO 27001, or internal audits.
+Trust is built on knowing *why* a decision was made. While standard logs only show *what* changed, OpenExec records the reasoning chain, every tool call, and each policy check in a **local audit log** (SQLite, at `.openexec/openexec.db`). The log is append-only and never leaves your machine. Optional AES-GCM encryption is available for the audit writer but is **off by default** — enable it if your environment requires encryption at rest. This gives you a self-hosted evidence trail to support internal reviews and ISO 27001 / SOC 2 audits.
 
 ---
 

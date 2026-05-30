@@ -11,13 +11,13 @@ While earlier versions relied on JSON artifacts (like `stories.json` or `tasks.j
 
 ## The Unified Schema
 
-The core database (`.openexec/data/state.db`) manages several critical domains:
+The core database (`.openexec/openexec.db`) manages several critical domains:
 
 1.  **Sessions:** Long-term conversational context and model configurations.
 2.  **Runs:** Individual execution instances of a blueprint or task.
 3.  **Steps:** The specific iterations within a run, including their input/output hashes.
 4.  **Artifacts:** Content-addressed pointers to patches, logs, and summaries stored on disk.
-5.  **Audit Vault:** An immutable record of every tool call, AI decision, and security check.
+5.  **Audit Vault:** An append-only record of every tool call, AI decision, and security check. Optional AES-GCM encryption is available but disabled by default.
 
 ## Why SQLite?
 

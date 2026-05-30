@@ -12,7 +12,10 @@ const sidebars: SidebarsConfig = {
       label: 'Core Concepts',
       items: [
         'engine/concepts/dcp',
+        'engine/concepts/blueprints',
         'lifecycle',
+        'engine/concepts/state-management',
+        'engine/concepts/configuration',
       ],
     },
     {
@@ -20,6 +23,8 @@ const sidebars: SidebarsConfig = {
       label: 'User Guides',
       items: [
         'engine/usage/wizard',
+        'engine/usage/cli-reference',
+        'engine/usage/status',
         'engine/usage/safe-commit',
       ],
     },

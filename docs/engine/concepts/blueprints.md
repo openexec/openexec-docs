@@ -43,9 +43,14 @@ OpenExec comes with several pre-defined blueprints:
 
 | ID | Name | Use Case |
 |----|------|----------|
-| `standard_task` | Standard Task | The default flow for coding tasks (with full validation). |
-| `quick_fix` | Quick Fix | A shorter flow for small, targeted corrections. |
-| `study_task` | Study Task | Purely analytical tasks that produce documentation. |
+| `standard_task` | Standard Task | The default flow for coding tasks (with full lint/test/review validation). Used when no `--blueprint-id` is given. |
+| `quick_fix` | Quick Fix | A simplified flow for small, targeted corrections. |
+
+Select a blueprint with the `--blueprint-id` flag:
+
+```bash
+openexec blueprint --blueprint-id quick_fix "Fix the typo in the README header"
+```
 
 ---
 *Next: Learn about [State Management](./state-management)*

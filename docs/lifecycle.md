@@ -41,11 +41,15 @@ Earlier versions of OpenExec used a fixed 5-phase pipeline. While still supporte
 
 ---
 
-## Fast-Track: Analytical Tasks
+## Quick-Fix Blueprint
 
-For tasks that are purely analytical (e.g., "Study the codebase", "Map orchestration boundaries"), OpenExec automatically activates a **Fast-Track** pipeline.
+For small, targeted corrections, OpenExec ships a `quick_fix` blueprint — a simplified workflow that runs fewer stages than the default `standard_task`:
 
-These tasks skip the implementation and testing stages entirely, moving directly from context gathering to the final summary.
+```bash
+openexec blueprint --blueprint-id quick_fix "Fix the typo in the README header"
+```
+
+When you don't pass `--blueprint-id`, OpenExec uses `standard_task` (the full gather → implement → lint → test → review flow). These are the two built-in blueprints today.
 
 ---
 
@@ -55,4 +59,4 @@ When a run is active, you can monitor these transitions in real-time via the **W
 
 - **Active Stage:** Highlighted in the execution loop.
 - **Logs:** Real-time tail of agent reasoning and tool output.
-- **Audit Trail:** Every transition and tool call is recorded in the immutable audit vault.
+- **Audit Trail:** Every transition and tool call is recorded in the append-only audit log (`.openexec/openexec.db`).
