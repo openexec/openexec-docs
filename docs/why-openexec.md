@@ -16,7 +16,7 @@ Most AI coding tools (like Claude Code, GitHub Copilot, or generic agents) start
 
 | Feature | Typical AI Agents | OpenExec |
 | :--- | :--- | :--- |
-| **Entry point** | A prompt you paste. | A labeled **GitHub / Jira issue**. |
+| **Entry point** | A prompt you paste. | A labeled **GitHub issue** (Jira on the roadmap). |
 | **Team tracking** | Manual — you update the ticket afterward. | **Automatic** issue → task → PR → merge trail. |
 | **Reliability** | "Try and see" - code might break your app. | **Predictable** blueprint → build → **verified** loop. |
 | **Privacy** | Sends raw source & metadata to cloud. | **PII Shield:** Scrubs emails, keys, and IPs locally. |
