@@ -6,9 +6,11 @@ sidebar_position: 1
 
 # OpenExec Documentation
 
-Welcome to **OpenExec**, the Deterministic AI Operating System. 
+Welcome to **OpenExec** — an AI delivery system that turns GitHub and Jira issues into reviewed, verified pull requests.
 
-OpenExec is now a **Single-Binary Platform** that handles the entire software development lifecycle—from initial requirements gathering to production deployment.
+The bottleneck in AI-assisted development was never coding speed; it's keeping the team in sync — copy-pasting a ticket to an agent, making the change, then updating Jira again by hand. OpenExec was built on greenfield-grade precision — extract intent, blueprint the work, decompose it into tasks, and verify every result against the goal — and points that same rigor at the individual tasks your team already tracks. Label an issue and it triages, plans, builds, and verifies it unattended, then opens a PR for you to review. The trail from issue → task → PR → merge is recorded automatically. Governance is optional.
+
+OpenExec ships as a **single binary** that can run the whole lifecycle — from a single task to an entire greenfield project.
 
 ### Core Documentation
 - [**The Architectural Roadmap**](/architecture) — Foundational specifications and the v1 strategy.

@@ -6,9 +6,9 @@ slug: /why-openexec
 
 # Why OpenExec?
 
-Most AI coding tools (like Claude Code, GitHub Copilot, or generic agents) operate as **black boxes**: you send your source code to the cloud, hope for the best, and manually verify the results. 
+Most AI coding tools (like Claude Code, GitHub Copilot, or generic agents) start from a **prompt you paste** and end with a change **you track by hand**: you copy a ticket into the agent, make the change, then update Jira again so the team knows what happened. The real bottleneck was never how fast the code gets written — it's keeping everyone in sync and knowing what the change actually did.
 
-**OpenExec is different.** It is designed by platform engineers for developers and organizations that need **predictability, privacy, and production standards** in their AI workflows.
+**OpenExec is different.** It starts from the issues your team already tracks and ends with a reviewed pull request, recording the trail automatically. Built on greenfield-grade precision and pointed at individual tasks — with **predictability, privacy, and optional governance** built in.
 
 ---
 
@@ -16,10 +16,11 @@ Most AI coding tools (like Claude Code, GitHub Copilot, or generic agents) opera
 
 | Feature | Typical AI Agents | OpenExec |
 | :--- | :--- | :--- |
+| **Entry point** | A prompt you paste. | A labeled **GitHub / Jira issue**. |
+| **Team tracking** | Manual — you update the ticket afterward. | **Automatic** issue → task → PR → merge trail. |
+| **Reliability** | "Try and see" - code might break your app. | **Predictable** blueprint → build → **verified** loop. |
 | **Privacy** | Sends raw source & metadata to cloud. | **PII Shield:** Scrubs emails, keys, and IPs locally. |
-| **Context** | Generic "search" or file-at-a-time. | **Knowledge Base:** Maintains a dynamic map of your whole repo. |
-| **Reliability** | "Try and see" - code might break your app. | **Safety Gates:** YAML rules block unsafe code *before* it runs. |
-| **Workflow** | Linear chat interface. | **Blueprint Engine:** Structured pipelines (Plan → Code → Lint → Test). |
+| **Governance** | None. | **Optional** pluggable module (sign-off + audit trail). |
 | **Ownership** | Logic lives in the cloud provider. | **Institutional Memory:** Your patterns stay in your local library. |
 
 ---
