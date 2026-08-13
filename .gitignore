@@ -2,7 +2,13 @@
 /node_modules
 
 # Production
+#
+# Two entries because the build moved: Docusaurus writes to build/ by default,
+# and package.json overrides it to dist/. Only the default was ignored, so the
+# rendered site was committed for a while. Both are named now, and neither is
+# the published artifact — nothing deploys from this repository's tree.
 /build
+/dist
 
 # Generated files
 .docusaurus
