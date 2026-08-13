@@ -18,3 +18,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# OpenExec local state
+#
+# A per-checkout SQLite database, its logs, checkpoints and artifacts: what this
+# machine did in this repository, not what the repository is. Ignored as a
+# directory rather than by extension, because the tool adds new state files
+# without asking. Anything in here that is genuinely source — a committed
+# openexec.yaml, a stories.json — stays tracked: .gitignore does not affect a
+# file that is already in the index.
+.openexec/
